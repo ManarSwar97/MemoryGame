@@ -16,8 +16,8 @@
 * Javascript
 ***
 ### *Wireframes* 
-![Memory Match-UP WireFrame 1]("C:\Users\User\OneDrive\Desktop\wireframe\wireframe1.png")
+![Memory Match-UP WireFrame 1](https://ibb.co/99CBcFLJ)
 
-![Memory Match-UP WireFrame 2]("C:\Users\User\OneDrive\Desktop\wireframe\wireframe2.png")
+![Memory Match-UP WireFrame 2](https://ibb.co/rfx62w4J)
 
 
