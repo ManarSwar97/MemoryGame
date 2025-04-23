@@ -16,8 +16,8 @@
 * Javascript
 ***
 ### *Wireframes* 
-![Memory Match-UP WireFrame 1](https://ibb.co/99CBcFLJ)
+![Memory Match-UP WireFrame 1](https://imgur.com/a/xgdYU53)
 
-![Memory Match-UP WireFrame 2](https://ibb.co/rfx62w4J)
+![Memory Match-UP WireFrame 2](https://imgur.com/REUACCO)
 
 
