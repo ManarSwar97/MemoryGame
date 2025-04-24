@@ -22,7 +22,7 @@
 //if the user select two matched cards they'll display
 //if the user didn't find all the matching cards within the time required it'll show a message that he lose
 //if the user find all the matching cards within the time required it'll show a message that he win
-//if the user win it'll increase the store and show an option if he want to continue playing the game
+//if the user win it'll increase the score and show an option if he want to continue playing the game
 //if the user click on the reset button it'll reset the score, timer and the cards will be flipped
 
 //optionals
