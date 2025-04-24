@@ -1,7 +1,8 @@
 //html pseudocode
 //HTML
 //create two html pages
-//the first page contains: title of the game - instruction - a start button that'll navigate to the game page (Maybe I'll add an option for the user to choose the number of cards he want)
+//the first page contains: title of the game - instruction - a start button that'll navigate to the game page 
+//(Maybe I'll add an option for the user to choose the number of cards he want)
 //the second page contains: a timer - a score that'll calculate how many times the player wins - cards 
 
 
