@@ -6,7 +6,6 @@
 
 
 
-
 //CSS
 //we need to use grid to align the cards in the page
 //style the pages
