@@ -19,7 +19,7 @@
 //use Math.random method to randomized the cards when the game start
 //add an array to save the card locations when the user click two correct cards
 
-
+//use for loop and IF statement 
 //when the game start the timer will start and the cards should be flipped and randomized
 //the user should be able to find all matches cards to win
 //if the user select two unmatched cards they'll be flipped again
