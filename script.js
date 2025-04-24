@@ -1,4 +1,4 @@
-//html pseudocode
+//Pseudocode
 //HTML
 //create two html pages
 //the first page contains: title of the game - instruction - a start button that'll navigate to the game page 
