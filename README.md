@@ -7,7 +7,7 @@
 #### [Linkedin](www.linkedin.com/in/manar-swar) | [GitHub](https://github.com/ManarSwar97)
 ***
 ### *Description About the Project*
-#### Memory Match-Up is a fun and challenging memory game where you have one minute to match all 16 cards. Flip the cards, find the pairs, and complete the board before time runs out. It's a quick test of focus, memory, and speed.
+#### Memory Match-Up is a fun and challenging memory game where you have one minute to match all cards. Flip the cards, find the pairs, and complete the board before time runs out. It's a quick test of focus, memory, and speed.
 
 ***
 ### *Technologies Used*
