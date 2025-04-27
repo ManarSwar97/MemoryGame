@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style2.css">
+    <script defer src="script.js"></script>
+   <!--<script defer src="script2.js"></script>--> 
+    <title>Memory Match-UP</title>
+</head>
+<body>
+    <div class="container">
+        <!--create a reset button-->
+        <div class="reset">
+            <button>Reset</button>
+        </div>
+        <!--create timer for 1:30 minute-->
+        <div class="timer">
+            <h3>Timer </h3>
+            <h3 class="timer1"> 1:30</h3>
+            <script>
+                let timeLeft = 90; 
+                let timerDisplay = document.querySelector(".timer1");
+                
+                let timer = setInterval(function() {
+                  timeLeft--;
+                  let minutes = Math.floor(timeLeft / 60);
+                  let seconds = timeLeft % 60;
+                  timerDisplay.textContent = minutes + ":" + String(seconds).padStart(2, "0");
+                
+                  if (timeLeft <= 0) {
+                    clearInterval(timer);
+                    alert("Hello");
+                  }
+                }, 1000);
+                </script>
+        </div>
+        <!--create score-->
+        <div class="score">
+            <h3>Score </h3>
+            <h2 class="score2">0000</h2>
+        </div>
+
+    </div>
+    <!--display cards-->
+    <div class="body-cards">
+    <div class="cards">
+        <div class="img"></div>
+        <div class="img"></div>
+        <div class="img"></div>
+        <div class="img"></div>
+        <div class="img"></div>
+        <div class="img"></div>
+        <div class="img"></div>
+        <div class="img"></div>
+        <div class="img"></div>
+        <div class="img"></div>
+        <div class="img"></div>
+        <div class="img"></div>
+        <div class="img"></div>
+        <div class="img"></div>
+        <div class="img"></div>
+        <div class="img"></div>
+        <div class="img"></div>
+        <div class="img"></div>
+        <div class="img"></div>
+        <div class="img"></div>
+        <div class="img"></div>
+        <div class="img"></div>
+        <div class="img"></div>
+        <div class="img"></div>
+
+    </div>
+</div>    
+</body>
+</html>

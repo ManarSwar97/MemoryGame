@@ -1,25 +1,92 @@
-//html pseudocode
-//HTML
-//create two html pages
-//the first page contains: title of the game - instruction - a start button that'll navigate to the game page
-//the second page contains: a timer - a score that'll calculate how many times the player wins - cards
+const cards = document.querySelectorAll('.img')
+
+const images = {
+    image1: [
+        { src: "figma/img11.png", name: "flower1" },
+        { src: "figma/img22.png", name: "flower2" },
+        { src: "figma/img33.png", name: "flower3" },
+        { src: "figma/img44.png", name: "flower4" },
+        { src: "figma/img55.png", name: "flower5" },
+        { src: "figma/img66.png", name: "flower6" },
+        { src: "figma/img77.png", name: "flower7" },
+        { src: "figma/img88.png", name: "flower8" },
+        { src: "figma/img99.png", name: "flower9" },
+        { src: "figma/img100.png", name: "flower10" },
+        { src: "figma/img110.png", name: "flower11" },
+        { src: "figma/img120.png", name: "flower12" }
+    ],
+    image2: [
+        { src: "figma/img11.png", name: "flower1" },
+        { src: "figma/img22.png", name: "flower2" },
+        { src: "figma/img33.png", name: "flower3" },
+        { src: "figma/img44.png", name: "flower4" },
+        { src: "figma/img55.png", name: "flower5" },
+        { src: "figma/img66.png", name: "flower6" },
+        { src: "figma/img77.png", name: "flower7" },
+        { src: "figma/img88.png", name: "flower8" },
+        { src: "figma/img99.png", name: "flower9" },
+        { src: "figma/img100.png", name: "flower10" },
+        { src: "figma/img110.png", name: "flower11" },
+        { src: "figma/img120.png", name: "flower12" }
+    ]
+};
+
+const image1Copy = [...images.image1]
+const image2Copy = [...images.image2]
+const imagess = []
+
+const imageFunction = () => {
+    for (let i = 0; i < 12; i++) {
+        const randomIndex1 = Math.floor(Math.random() * image1Copy.length)
+        const randomIndex2 = Math.floor(Math.random() * image2Copy.length)
+
+        const randomImage1 = image1Copy[randomIndex1]
+        const randomImage2 = image2Copy[randomIndex2]
+
+        imagess.push(randomImage1)
+        imagess.push(randomImage2)
+
+        image1Copy.splice(randomIndex1, 1)
+        image2Copy.splice(randomIndex2, 1)
+    }
+    return imagess
+}
+
+const result = imageFunction()
+console.log(result)
 
 
+const displayImages = () => {
+    imagess.forEach((image, index) => {
+        const div = document.createElement('div')
+        div.classList.add('image-container')
+
+        const imgElement = document.createElement('img')
+        imgElement.setAttribute('class', 'front')
+        imgElement.src = image.src
+        imgElement.style.width = '100px'
+        imgElement.style.opacity = '0'
+
+        const imgElement2 = document.createElement('img')
+        imgElement2.setAttribute('class', 'back')
+        imgElement2.src = "figma/back.png"
+        imgElement2.style.width = '100px'
+        imgElement2.style.opacity = '1'
+
+        div.appendChild(imgElement)
+        div.appendChild(imgElement2)
+
+        div.addEventListener('click', () => {
+            imgElement.style.opacity = '1'
+            imgElement2.style.opacity = '0'
+        })
+
+        if (cards[index]) {
+            cards[index].appendChild(div)
+        }
+    })
+}
 
 
-//CSS
-//we need to use grid to align the cards in the page
-//style the pages
-//add flipping animation for the cards when they flipped 
-
-
-
-//Javascript
-//when the game start the timer will start and the cards should be flipped and randomized
-//the user should be able to find all matches cards to win
-//if the user select two unmatched cards they'll be flipped again
-//if the user select two matched cards they'll appear
-//if the user didn't find all the matching cards within the time required it'll show a message that he lose
-//if the user find all the matching cards within the time required it'll show a message that he win
-//if the user win it'll increase the store and show an option if he want to continue playing the game
+displayImages()
 

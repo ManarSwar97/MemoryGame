@@ -1,0 +1,59 @@
+body{
+    margin: 0;
+    height: 100vh;
+    background-color: #FAACA8;
+    background-image: linear-gradient(19deg, #FAACA8 31%, #DDD6F3 100%);    
+    
+}
+.head{
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    font-family: 'Pacifico', cursive;
+
+}
+.container{
+    border: 5px solid white;
+    margin-left: 20%;
+    margin-right: 20%;
+}
+.container-header{
+    font-size: 40px;
+    color: white;
+    font-family: 'Bangers', cursive;
+    text-align: center;
+}
+.instructions{
+    font-size: 30px;
+    color: white;
+    font-family: 'Bangers', cursive;
+    text-align: left;
+}
+button{
+    background-color: white;
+    width: 150px;
+    height: 50px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 45%;
+    margin-top: 40px;
+    border: 5px solid white;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+button a {
+    color: #FAACA8;
+    font-weight: bold;
+    font-size: 20px;
+    text-decoration: none;
+}
+button:hover {
+    background-color: #ee9ca7;
+}
+button a:hover {
+    color: white;
+}
