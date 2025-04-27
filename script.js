@@ -55,7 +55,6 @@ const imageFunction = () => {
 const result = imageFunction()
 console.log(result)
 
-
 const displayImages = () => {
     imagess.forEach((image, index) => {
         const div = document.createElement('div')
@@ -86,7 +85,4 @@ const displayImages = () => {
         }
     })
 }
-
-
 displayImages()
-
