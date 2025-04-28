@@ -1,4 +1,8 @@
-const cards = document.querySelectorAll('.img')
+const cards = document.querySelectorAll('.img');
+let divs = [];
+let imgFronts = [];
+let imgBacks = [];
+let score = 0;
 
 const images = {
     image1: [
@@ -31,58 +35,101 @@ const images = {
     ]
 };
 
-const image1Copy = [...images.image1]
-const image2Copy = [...images.image2]
-const imagess = []
+const image1Copy = [...images.image1];
+const image2Copy = [...images.image2];
+const imagess = [];
 
 const imageFunction = () => {
     for (let i = 0; i < 12; i++) {
-        const randomIndex1 = Math.floor(Math.random() * image1Copy.length)
-        const randomIndex2 = Math.floor(Math.random() * image2Copy.length)
+        const randomIndex1 = Math.floor(Math.random() * image1Copy.length);
+        const randomIndex2 = Math.floor(Math.random() * image2Copy.length);
 
-        const randomImage1 = image1Copy[randomIndex1]
-        const randomImage2 = image2Copy[randomIndex2]
+        const randomImage1 = image1Copy[randomIndex1];
+        const randomImage2 = image2Copy[randomIndex2];
 
-        imagess.push(randomImage1)
-        imagess.push(randomImage2)
+        imagess.push(randomImage1);
+        imagess.push(randomImage2);
 
-        image1Copy.splice(randomIndex1, 1)
-        image2Copy.splice(randomIndex2, 1)
+        image1Copy.splice(randomIndex1, 1);
+        image2Copy.splice(randomIndex2, 1);
     }
-    return imagess
-}
+    return imagess;
+};
 
-const result = imageFunction()
-console.log(result)
+const result = imageFunction();
+console.log(result);
 
 const displayImages = () => {
     imagess.forEach((image, index) => {
-        const div = document.createElement('div')
-        div.classList.add('image-container')
+        const div = document.createElement('div');
+        div.classList.add('image-container');
 
-        const imgElement = document.createElement('img')
-        imgElement.setAttribute('class', 'front')
-        imgElement.src = image.src
-        imgElement.style.width = '100px'
-        imgElement.style.opacity = '0'
+        const imgFront = document.createElement('img');
+        imgFront.src = image.src;
+        imgFront.style.width = '100px';
+        imgFront.style.opacity = '0';
 
-        const imgElement2 = document.createElement('img')
-        imgElement2.setAttribute('class', 'back')
-        imgElement2.src = "figma/back.png"
-        imgElement2.style.width = '100px'
-        imgElement2.style.opacity = '1'
+        const imgBack = document.createElement('img');
+        imgBack.src = "figma/back.png";
+        imgBack.style.width = '100px';
+        imgBack.style.opacity = '1';
 
-        div.appendChild(imgElement)
-        div.appendChild(imgElement2)
-
-        div.addEventListener('click', () => {
-            imgElement.style.opacity = '1'
-            imgElement2.style.opacity = '0'
-        })
-
+        div.appendChild(imgFront);
+        div.appendChild(imgBack);
+        
         if (cards[index]) {
-            cards[index].appendChild(div)
+            cards[index].appendChild(div);
         }
-    })
-}
-displayImages()
+
+        divs.push(div);
+        imgFronts.push(imgFront);
+        imgBacks.push(imgBack);
+
+    });
+};
+const winning = () => {
+    let opened = [];
+
+    for (let i = 0; i < divs.length; i++) {
+        if (imgFronts[i].style.opacity === '1') {
+            opened.push(i);
+        }
+    }
+
+    if (opened.length <= 2) {
+        for (let i = 0; i < opened.length; i++) {
+            for (let j = i + 1; j < opened.length; j++) {
+                const firstIndex = opened[i];
+                const secondIndex = opened[j];
+
+                if (imagess[firstIndex].name === imagess[secondIndex].name) {
+                    imgFronts[firstIndex].style.opacity = '1';
+                    imgBacks[firstIndex].style.opacity = '0';
+                    imgFronts[secondIndex].style.opacity = '1';
+                    imgBacks[secondIndex].style.opacity = '0';
+                    break
+                } else {
+                    setTimeout(() => {
+                        imgFronts[firstIndex].style.opacity = '0';
+                        imgBacks[firstIndex].style.opacity = '1';
+                        imgFronts[secondIndex].style.opacity = '0';
+                        imgBacks[secondIndex].style.opacity = '1';
+                    }, 500);
+                    
+                }
+            }
+        }
+    }
+};
+
+
+displayImages();
+
+divs.forEach((div, index) => {
+    div.addEventListener('click', () => {
+        imgFronts[index].style.opacity = '1';
+        imgBacks[index].style.opacity = '0';
+        winning(); 
+    });
+});
+
