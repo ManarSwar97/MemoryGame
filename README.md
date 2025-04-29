@@ -22,5 +22,10 @@
 ### *Game Pages*
 ![Instruction Page](https://github.com/user-attachments/assets/0e34d06e-1121-4353-87e4-118af756225d)
 ![Main Page](https://github.com/user-attachments/assets/03ef28ce-e1ce-471e-9959-45f1c1c62dc1)
-
-
+***
+### *Main Features*
+* Memory card matching gameplay
+* Countdown Timer
+* Scoring System
+* Sound Effects
+* Randomized image placement
